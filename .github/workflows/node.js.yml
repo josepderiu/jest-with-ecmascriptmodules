@@ -26,6 +26,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - run: npm ci
+    - run: npm run build --if-present
+    - run: npm test
     - name: SonarCloud Scan
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -33,6 +36,4 @@ jobs:
       uses: SonarSource/sonarcloud-github-action@v1.6
       with:
         projectBaseDir: .
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+
