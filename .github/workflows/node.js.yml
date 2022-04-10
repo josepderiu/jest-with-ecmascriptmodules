@@ -33,8 +33,6 @@ jobs:
       uses: SonarSource/sonarcloud-github-action@v1.6
       with:
         projectBaseDir: .
-        sonar.organization: ${{ secrets.SONAR_ORGANIZATION }}
-        sonar.projectKey: ${{ secrets.SONAR_PROJECT_KEY }}
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
