@@ -19,7 +19,7 @@
     "jest-sonar-reporter": "^2.0.0"
   },
   "jestSonar": {
-    "reportPath": "coverage",
+    "reportPath": "reports",
     "reportFile": "test-report.xml",
     "indent": 4
   }
